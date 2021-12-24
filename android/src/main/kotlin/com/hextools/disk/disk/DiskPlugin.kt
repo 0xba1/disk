@@ -1,6 +1,7 @@
 package com.hextools.disk.disk
 
 import androidx.annotation.NonNull
+import android.os.StatFs
 
 import io.flutter.embedding.engine.plugins.FlutterPlugin
 import io.flutter.plugin.common.MethodCall
