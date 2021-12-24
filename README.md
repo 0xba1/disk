@@ -23,8 +23,7 @@ dependencies:
     int usedSpace = totalSpace - freeSpace;
     
     // To get paths of all mounted `StorageVolumes`
-    // For SDK 30 and above
-    // [{"path": path, "name": name}, {"path": path, "name": name}]
+    
     List<String> storageVolumePaths = Disk.getStorageVolumePaths();
     
     for storageVolumePath in storageVolumePaths {
