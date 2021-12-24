@@ -25,10 +25,10 @@ dependencies:
     // To get paths of all mounted `StorageVolumes`
     // For SDK 30 and above
     // [{"path": path, "name": name}, {"path": path, "name": name}]
-    List<Map<String, String>> storageVolumes = Disk.getStorageVolumes();
+    List<String> storageVolumePaths = Disk.getStorageVolumePaths();
     
-    for storageVolume in storageVolumes {
-        print("name: ${storageVolume["name"]}, path: ${storageVolume["path"]}");
+    for storageVolumePath in storageVolumes {
+        print("storageVolumePath");
     }
     
     

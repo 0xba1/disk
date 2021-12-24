@@ -24,7 +24,7 @@ class Disk {
     return await _channel.invokeMethod("getUsedBytes", {"path": path});
   }
 
-  Future<List<String>> getStorageVolumesPaths() async {
+  Future<List<String>> getStorageVolumePaths() async {
     List? storageDirectories = await getExternalStorageDirectories();
 
     return (storageDirectories ?? [])
