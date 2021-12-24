@@ -27,7 +27,7 @@ dependencies:
     // [{"path": path, "name": name}, {"path": path, "name": name}]
     List<String> storageVolumePaths = Disk.getStorageVolumePaths();
     
-    for storageVolumePath in storageVolumesPaths {
+    for storageVolumePath in storageVolumePaths {
         print("storageVolumePath");
     }
     
