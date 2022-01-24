@@ -1,4 +1,4 @@
-group 'com.hextools.disk.disk'
+group 'com.hextools.disk'
 version '1.0-SNAPSHOT'
 
 buildscript {

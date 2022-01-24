@@ -1,4 +1,4 @@
-package com.hextools.disk.disk
+package com.hextools.disk
 
 import androidx.annotation.NonNull
 import android.os.StatFs
