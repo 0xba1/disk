@@ -6,7 +6,7 @@ A flutter plugin for android to get storage volumes' information.
 
 ```yaml
 dependencies:
-  disk: ^0.3.0
+  disk: ^0.3.1
 ```
 
 ## Example
