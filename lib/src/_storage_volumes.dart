@@ -3,26 +3,26 @@ import 'package:disk/src/_storage_volume.dart';
 import 'package:equatable/equatable.dart';
 
 class StorageVolumes extends Equatable {
-  List<StorageVolume>? _storageVolumeList;
+  List<StorageVolume>? _list;
 
   StorageVolumes();
 
-  int? get length => _storageVolumeList?.length;
+  int? get length => _list?.length;
 
-  List<StorageVolume>? get storageVolumeListCache => _storageVolumeList;
+  List<StorageVolume>? get listCache => _list;
 
   static Future<StorageVolumes> init() async {
     StorageVolumes storageVolumes = StorageVolumes();
-    await storageVolumes.storageVolumeList;
+    await storageVolumes.list;
     return storageVolumes;
   }
 
-  Future<List<StorageVolume>> get storageVolumeList async {
-    if (_storageVolumeList != null) return _storageVolumeList!;
-    _storageVolumeList = (await Disk.getStorageVolumePaths())
+  Future<List<StorageVolume>> get list async {
+    if (_list != null) return _list!;
+    _list = (await Disk.getStorageVolumePaths())
         .map((path) => StorageVolume(path))
         .toList();
-    return _storageVolumeList!;
+    return _list!;
   }
 
   static Stream<StorageVolumes> stream(
@@ -41,8 +41,8 @@ class StorageVolumes extends Equatable {
   }
 
   @override
-  List<Object?> get props => [_storageVolumeList];
+  List<Object?> get props => [_list];
 
   @override
-  String toString() => 'StorageVolumes(_storageVolumes: $_storageVolumeList)';
+  String toString() => 'StorageVolumes(_storageVolumes: $_list)';
 }

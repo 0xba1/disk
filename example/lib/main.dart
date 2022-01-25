@@ -25,34 +25,41 @@ class MyApp extends StatelessWidget {
             }
             StorageVolumes storageVolumes = snapshot.data as StorageVolumes;
 
-            return ListView.builder(
-              itemCount: storageVolumes.length,
-              itemBuilder: (context, index) {
-                return FutureBuilder(
-                  future: storageVolumes.storageVolumeListCache![index]
-                      .cacheDetails(),
-                  builder: (context, snapshot) {
-                    if (!snapshot.hasData) {
-                      return const SizedBox();
-                    }
-                    StorageVolume storageVolume =
-                        storageVolumes.storageVolumeListCache![index];
-                    return Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text("Name: ${storageVolume.name}"),
-                        Text("Path: ${storageVolume.path}"),
-                        Text(
-                            "Total Space: ${storageVolume.totalSpaceCache} Bytes"),
-                        Text(
-                            "Used Space: ${storageVolume.usedSpaceCache} Bytes"),
-                        Text(
-                            "Free Space: ${storageVolume.freeSpaceCache} Bytes"),
-                      ],
-                    );
-                  },
-                );
-              },
+            return Padding(
+              padding: const EdgeInsets.all(50.0),
+              child: ListView.builder(
+                itemCount: storageVolumes.length,
+                itemBuilder: (context, index) {
+                  return FutureBuilder(
+                    future: storageVolumes.listCache![index].cacheDetails(),
+                    builder: (context, snapshot) {
+                      StorageVolume? storageVolume =
+                          storageVolumes.listCache?[index];
+
+                      if (storageVolume == null) return const SizedBox();
+                      return Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text("Name: ${storageVolume.name}"),
+                          Text("Path: ${storageVolume.path}"),
+                          Text(
+                            "Total Space: ${storageVolume.totalSpaceCache} Bytes",
+                          ),
+                          Text(
+                            "Used Space: ${storageVolume.usedSpaceCache} Bytes",
+                          ),
+                          Text(
+                            "Free Space: ${storageVolume.freeSpaceCache} Bytes",
+                          ),
+                          const SizedBox(
+                            height: 50.0,
+                          )
+                        ],
+                      );
+                    },
+                  );
+                },
+              ),
             );
           },
         ),
