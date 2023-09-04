@@ -13,15 +13,15 @@ class Disk {
   }
 
   static Future<int> getTotalBytes(String path) async {
-    return await _channel.invokeMethod("getTotalBytes", {"path": path});
+    return await _channel.invokeMethod("getTotalBytes", {"path": path}) as int;
   }
 
   static Future<int> getFreeBytes(String path) async {
-    return await _channel.invokeMethod("getFreeBytes", {"path": path});
+    return await _channel.invokeMethod("getFreeBytes", {"path": path}) as int;
   }
 
   static Future<int> getUsedBytes(String path) async {
-    return await _channel.invokeMethod("getUsedBytes", {"path": path});
+    return await _channel.invokeMethod("getUsedBytes", {"path": path}) as int;
   }
 
   static Future<List<String>> getStorageVolumePaths() async {
