@@ -1,11 +1,11 @@
 name: disk
 description: A flutter plugin for android to get storage volumes' information.
-version: 0.3.1
+version: 0.3.2
 homepage: https://hextools.0xba1.xyz
 repository: https://github.com/0xba1/disk.git
 
 environment:
-  sdk: ">=2.15.0 <3.0.0"
+  sdk: ">=2.15.0 <4.0.0"
   flutter: ">=2.5.0"
 
 dependencies:
@@ -17,7 +17,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  very_good_analysis: ^2.4.0
+  very_good_analysis: ^5.1.0
 
 flutter:
   plugin:
