@@ -5,3 +5,4 @@
 0.3.0 - Improved API - StorageVolume, StorageVolumes
 0.3.1 - Added LICENCE
 0.3.2 - Updated gradle and kotlin versions
+0.3.3 - Updated compileSdkVersion version to 31
